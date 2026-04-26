@@ -139,6 +139,37 @@ function LoginPage() {
           <button style={styles.button} type="submit">
             {isLogin ? "Login" : "Signup"}
           </button>
+          {isLogin && (
+            <div style={styles.socialContainer}>
+
+              <button
+                type="button"
+                style={styles.googleButton}
+                onClick={() => alert("Google login not implemented")}
+              >
+                <img
+                  src="https://developers.google.com/identity/images/g-logo.png"
+                  alt="google"
+                  style={styles.icon}
+                />
+                Continue with Google
+              </button>
+
+              <button
+                type="button"
+                style={styles.facebookButton}
+                onClick={() => alert("Facebook login not implemented")}
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                  alt="facebook"
+                  style={styles.icon}
+                />
+                Continue with Facebook
+              </button>
+
+            </div>
+          )}
         </form>
 
         {message && <p style={styles.message}>{message}</p>}
@@ -205,6 +236,46 @@ const styles = {
     marginTop: "12px",
     color: "green",
   },
+
+    socialContainer: {
+      marginTop: "15px",
+      display: "flex",
+      flexDirection: "column",
+      gap: "10px",
+    },
+
+    googleButton: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      padding: "10px",
+      borderRadius: "6px",
+      border: "1px solid #ddd",
+      background: "#fff",
+      cursor: "pointer",
+      fontWeight: "500",
+    },
+
+    facebookButton: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      padding: "10px",
+      borderRadius: "6px",
+      border: "none",
+      background: "#1877f2",
+      color: "white",
+      cursor: "pointer",
+      fontWeight: "500",
+    },
+
+    icon: {
+      width: "20px",
+      height: "20px",
+    },
+
 };
 
 export default LoginPage;
